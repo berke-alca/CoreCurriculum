@@ -13,6 +13,7 @@
 //header veränder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char *ft_strdup(const char *s1)
 {
@@ -40,4 +41,11 @@ char *ft_strdup(const char *s1)
     }
     newptr[terminator] = '\0';
     return (newptr);
+}
+
+int main()
+{
+    char *name = "berke";
+    char *cpy = ft_strdup(name);
+    printf("%s", cpy);
 }
