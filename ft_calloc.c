@@ -13,7 +13,7 @@
 //header veränder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 void *ft_calloc(size_t count, size_t size)
 {
     size_t  howmanybytes;
@@ -29,4 +29,13 @@ void *ft_calloc(size_t count, size_t size)
         return (NULL);
     ft_memset(ptr, 0, howmanybytes);
     return (ptr);
+}
+int main()
+{
+    int *ptr = ft_calloc(10, 4);
+    int i = 0;
+    while(i != 10)
+    {
+        printf("%d", ptr[i]);
+    }
 }
