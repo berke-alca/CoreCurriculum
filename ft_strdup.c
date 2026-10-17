@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 13:37:26 by balca             #+#    #+#             */
-/*   Updated: 2026/10/15 17:25:43 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/17 14:18:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
-	int		laenghts1;
-	int		terminator;
-	int		counter;
+	size_t	laenghts1;
+	size_t	terminator;
+	size_t	counter;
 	char	*newptr;
 
 	terminator = 0;

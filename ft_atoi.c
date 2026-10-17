@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:21:53 by balca             #+#    #+#             */
-/*   Updated: 2026/10/15 17:29:43 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/17 14:17:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_atoi(const char *str)
 {
-	int	counter;
-	int	res;
-	int	minus;
+	int		counter;
+	long	res;
+	int		minus;
 
 	minus = 1;
 	res = 0;
@@ -34,7 +32,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (str[counter] - '0');
 		counter++;
 	}
-	return (res * minus);
+	return ((int)(res * minus));
 }
 // int main()
 // {

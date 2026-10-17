@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 13:34:17 by balca             #+#    #+#             */
-/*   Updated: 2026/10/15 17:17:43 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/17 14:17:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 
