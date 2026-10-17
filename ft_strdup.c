@@ -3,49 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 12:18:39 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/14 12:18:39 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/15 13:37:26 by balca             #+#    #+#             */
+/*   Updated: 2026/10/15 17:25:43 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//header veränder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <stddef.h>
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    int laenghts1;
-    int terminator;
-    int counter; 
-    char *newptr;
+	int		laenghts1;
+	int		terminator;
+	int		counter;
+	char	*newptr;
 
-    terminator = 0;
-    laenghts1 = 0;
-    counter = 0;
-    while (s1[laenghts1] != '\0')
-    {
-        laenghts1++;
-        terminator++;
-    }
-    newptr = malloc(laenghts1 + 1);
-    if (!newptr)
-        return (NULL);
-    while (laenghts1 > 0)
-    {
-        newptr[counter] = s1[counter];
-        counter++;
-        laenghts1--;
-    }
-    newptr[terminator] = '\0';
-    return (newptr);
+	terminator = 0;
+	laenghts1 = 0;
+	counter = 0;
+	while (s1[laenghts1] != '\0')
+	{
+		laenghts1++;
+		terminator++;
+	}
+	newptr = malloc(laenghts1 + 1);
+	if (!newptr)
+		return (NULL);
+	while (laenghts1 > 0)
+	{
+		newptr[counter] = s1[counter];
+		counter++;
+		laenghts1--;
+	}
+	newptr[terminator] = '\0';
+	return (newptr);
 }
 
-int main()
-{
-    char *name = "berke";
-    char *cpy = ft_strdup(name);
-    printf("%s", cpy);
-}
+// int main()
+// {
+//     char *name = "berke";
+//     char *cpy = ft_strdup(name);
+//     printf("%s", cpy);
+// }
