@@ -2,32 +2,31 @@
 //header aendern 
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	size_s;
-	size_t	fake_len;
-	size_t	i;
-	char	*p;
+	size_t	text_length;
+	size_t	copy_length;
+	size_t	counter;
+	char	*new_text;
 
-	size_s = ft_strlen(s);
-	if (start >= size_s)
+	text_length = ft_strlen(s);
+	if (start >= text_length)
 		return (ft_strdup(""));
-	fake_len = size_s - start;
-	if (fake_len > len)
-		fake_len = len;
-	p = malloc(fake_len + 1);
-	if (!p)
+	copy_length = text_length - start;
+	if (copy_length > len)
+		copy_length = len;
+	new_text = malloc(copy_length + 1);
+	if (!new_text)
 		return (NULL);
-	i = 0;
-	while (i < fake_len)
+	counter = 0;
+	while (counter < copy_length)
 	{
-		p[i] = s[start + i];
-		i++;
+		new_text[counter] = s[start + counter];
+		counter++;
 	}
-	p[i] = '\0';
-	return (p);
+	new_text[counter] = '\0';
+	return (new_text);
 }
 /*(int	main()
 {
@@ -38,5 +37,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	free(result);
 	return (0);
 	//cc .\ft_substr.c .\ft_strlen.c .\ft_strdup.c
-}
-	*/
+}	*/
