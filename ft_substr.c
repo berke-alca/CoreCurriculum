@@ -1,32 +1,41 @@
-
-//header aendern 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/18 09:30:14 by balca             #+#    #+#             */
+/*   Updated: 2026/10/19 13:01:47 by balca            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	text_length;
-	size_t	copy_length;
-	size_t	counter;
-	char	*new_text;
+	char	*new;
+	size_t	i;
+	size_t	slen;
 
-	text_length = ft_strlen(s);
-	if (start >= text_length)
-		return (ft_strdup(""));
-	copy_length = text_length - start;
-	if (copy_length > len)
-		copy_length = len;
-	new_text = malloc(copy_length + 1);
-	if (!new_text)
+	if (!s)
 		return (NULL);
-	counter = 0;
-	while (counter < copy_length)
+	slen = ft_strlen(s);
+	if (start >= slen)
+		len = 0;
+	else if (len > slen - start)
+		len = slen - start;
+	new = malloc(len + 1);
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		new_text[counter] = s[start + counter];
-		counter++;
+		new[i] = s[start + i];
+		i++;
 	}
-	new_text[counter] = '\0';
-	return (new_text);
+	new[i] = '\0';
+	return (new);
 }
 /*(int	main()
 {

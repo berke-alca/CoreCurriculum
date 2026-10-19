@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/12 13:47:09 by balca             #+#    #+#             */
-/*   Updated: 2026/10/17 14:39:00 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/17 15:34:38 by balca             #+#    #+#             */
+/*   Updated: 2026/10/19 13:01:48 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*last;
+	size_t	i;
 
-	i = 0;
-	last = 0;
-	while (s[i] != '\0')
+	i = ft_strlen(s);
+	while (1)
 	{
 		if ((unsigned char)s[i] == (unsigned char)c)
-			last = (char *)&s[i];
-		i++;
+			return ((char *)&s[i]);
+		if (i == 0)
+			break ;
+		i--;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)&s[i]);
-	return (last);
+	return (NULL);
 }
 
-// int main()
-// {
-// 	char name[] = "berke";
-// 	printf("%p\n", (void *)name);
-// 	printf("%c\n", *name);
-// }

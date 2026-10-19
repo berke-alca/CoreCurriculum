@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 14:23:08 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/17 14:23:08 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/12 13:47:09 by balca             #+#    #+#             */
+/*   Updated: 2026/10/19 09:23:19 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,10 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
+
+// int main()
+// {
+// 	char name[] = "berke";
+// 	printf("%p\n", (void *)name);
+// 	printf("%c\n", *name);
+// }
