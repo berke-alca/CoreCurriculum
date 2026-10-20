@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 10:18:21 by balca             #+#    #+#             */
-/*   Updated: 2026/10/19 09:20:24 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/20 12:44:51 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new_str[counter] = '\0';
 	return (new_str);
 }
-int main()
-{
+// int main()
+// {
 
-}
+// }

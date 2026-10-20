@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 10:00:11 by balca             #+#    #+#             */
-/*   Updated: 2026/10/19 09:17:28 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/20 12:44:33 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new_str);
 }
 
-int main()
-{
+// int main()
+// {
 
-}
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 19:01:54 by b3                #+#    #+#             */
-/*   Updated: 2026/10/19 19:16:47 by b3               ###   ########.fr       */
+/*   Created: 2026/10/19 19:01:54 by balca             #+#    #+#             */
+/*   Updated: 2026/10/20 12:46:37 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int counter;
+	unsigned int	counter;
 
-    counter = 0; 
-    while (s[counter] != '\0')
-    {
-        f(counter, &s[counter]);
-        counter++;
-    }
-    s[counter] = '\0';
+	counter = 0;
+	while (s[counter] != '\0')
+	{
+		f(counter, &s[counter]);
+		counter++;
+	}
+	s[counter] = '\0';
 }
 // void    funktion(unsigned int i, char *s)
 // {

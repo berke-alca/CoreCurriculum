@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 09:10:28 by balca             #+#    #+#             */
-/*   Updated: 2026/10/19 14:35:01 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/20 16:45:34 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
+typedef struct s_list
+{
+	void				*content;
+	struct s_list		*next;
+}				t_list;
 
 #endif

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 19:19:19 by b3                #+#    #+#             */
-/*   Updated: 2026/10/19 19:25:37 by b3               ###   ########.fr       */
+/*   Created: 2026/10/19 19:19:19 by balca             #+#    #+#             */
+/*   Updated: 2026/10/20 12:53:21 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "unistd.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-   write(fd, &c, 1);
+	write(fd, &c, 1);
 }
 
 // int main()
