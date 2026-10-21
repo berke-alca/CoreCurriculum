@@ -40,5 +40,5 @@ int main()
     B.next = &C;
     C.next = NULL;
     head = &A;
-    ft_lstsize(head);
+    ft_lstsize(&A);
 }
