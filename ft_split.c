@@ -49,7 +49,7 @@ static char	*ft_make_word(char const *s, size_t start, size_t len)
 	return (word);
 }
 
-static void	ft_free_split(char **split, size_t words)
+static char	**ft_free_split(char **split, size_t words)
 {
 	while (words > 0)
 	{
@@ -57,6 +57,7 @@ static void	ft_free_split(char **split, size_t words)
 		free(split[words]);
 	}
 	free(split);
+	return (NULL);
 }
 
 static int	ft_add_word(char **split, char const *s, char c, size_t *pos)
@@ -96,11 +97,8 @@ char	**ft_split(char const *s, char c)
 	while (s[i])
 	{
 		status = ft_add_word(&split[word], s, c, &i);
-	if (status == -1)
-	{
-		ft_free_split(split, word);
-		return (NULL);
-	}
+		if (status == -1)
+			return (ft_free_split(split, word));
 		if (status == 1)
 			word++;
 	}
