@@ -15,11 +15,9 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	h;
-	size_t	n;
 	size_t	needlelength;
 
 	needlelength = 0;
-	n = 0;
 	h = 0;
 	while (needle[needlelength] != '\0')
 		needlelength++;

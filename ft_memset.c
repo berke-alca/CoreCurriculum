@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include <stddef.h>
 
-void	*ft_memset(void *str, int value, size_t sizeOfBytes)
+void	*ft_memset(void *str, int value, size_t size_of_bytes)
 {
 	unsigned char	*ptr;
 	size_t			i;
 
 	i = 0;
 	ptr = str;
-	while (sizeOfBytes > 0)
+	while (size_of_bytes > 0)
 	{
 		ptr[i] = (unsigned char)value;
 		i++;
-		sizeOfBytes--;
+		size_of_bytes--;
 	}
 	return (str);
 }
