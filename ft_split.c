@@ -96,8 +96,11 @@ char	**ft_split(char const *s, char c)
 	while (s[i])
 	{
 		status = ft_add_word(&split[word], s, c, &i);
-		if (status == -1)
-			return (ft_free_split(split, word), NULL);
+	if (status == -1)
+	{
+		ft_free_split(split, word);
+		return (NULL);
+	}
 		if (status == 1)
 			word++;
 	}
