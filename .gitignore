@@ -1,0 +1,8 @@
+# Build-Dateien
+*.o
+*.a
+a.out
+
+# Editor / System
+.vscode/
+.DS_Store
