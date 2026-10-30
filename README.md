@@ -23,7 +23,7 @@ CoreCurriculum/
 
 ## Before the Core Curriculum
 
-👉 [42-Piscine](https://github.com/b3-3/42-Piscine): the four-week selection bootcamp where I learned C from scratch.
+👉 [42-Piscine](https://github.com/berke-alca/42-Piscine): the four-week selection bootcamp where I learned C from scratch.
 
 ## Skills
 
