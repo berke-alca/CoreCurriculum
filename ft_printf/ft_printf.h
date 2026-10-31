@@ -6,7 +6,7 @@
 /*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 13:59:03 by balca             #+#    #+#             */
-/*   Updated: 2026/10/31 21:23:27 by b3               ###   ########.fr       */
+/*   Updated: 2026/10/31 21:38:41 by b3               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int print_int(int i);
 int print_unsigned(unsigned int u);
 int print_xhex(unsigned int u);
 int print_xhex_big(unsigned int u);
+int print_pointer(void *ptr);
 
 #endif
