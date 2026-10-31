@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:48:33 by balca             #+#    #+#             */
-/*   Updated: 2026/10/30 14:23:04 by balca            ###   ########.fr       */
+/*   Updated: 2026/10/31 21:18:07 by b3               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	which_char(char chr, va_list *args)
 	else if (chr == 'x')
 		return (print_xhex(va_arg(*args, unsigned int)));
 	else if (chr == 'X')
-		return (0);
+		return (print_xhex_big(va_arg(*args, unsigned int)));
 	else if (chr == '%')
 		return (print_percent());
 	return (0);
@@ -73,5 +73,10 @@ int main()
 	ft_printf("%d\n", -2147483648);
 	ft_printf("%d\n", -58);
 	ft_printf("%u\n", 2);
-	ft_printf("%u", 4294967295);
+	ft_printf("%u\n", 4294967295);
+	ft_printf("%x\n", 10);
+	ft_printf("%x\n", 9);
+
+
+
 }
