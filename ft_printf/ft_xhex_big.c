@@ -6,7 +6,7 @@
 /*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:18:21 by b3                #+#    #+#             */
-/*   Updated: 2026/10/31 21:19:32 by b3               ###   ########.fr       */
+/*   Updated: 2026/10/31 21:22:45 by b3               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*ft_itoa_hex(unsigned int n)
 	}
 	return (new_arr);
 }
-print_xhex_big(unsigned int u)
+int print_xhex_big(unsigned int u)
 {
     char	*number;
 	int		return_value;
