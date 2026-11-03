@@ -6,13 +6,14 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:01:50 by balca             #+#    #+#             */
-/*   Updated: 2026/10/30 13:10:04 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/03 12:35:06 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <fcntl.h>
 
-int print_percent(void)
+int	print_percent(void)
 {
 	ft_putchar_fd('%', 1);
 	return (1);

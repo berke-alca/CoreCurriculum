@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:32:09 by balca             #+#    #+#             */
-/*   Updated: 2026/10/30 14:05:32 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/03 12:36:22 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ char	*ft_itoa_unsigned(unsigned int n)
 	return (new_arr);
 }
 
-int print_unsigned(unsigned int u)
+int	print_unsigned(unsigned int u)
 {
 	char	*number;
 	int		return_value;
 
 	number = ft_itoa_unsigned(u);
-	if(number == NULL)
+	if (number == NULL)
 		return (-1);
 	return_value = ft_strlen(number);
 	print_string(number);
 	free(number);
-	return(return_value);
+	return (return_value);
 }

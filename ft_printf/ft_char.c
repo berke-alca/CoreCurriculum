@@ -6,13 +6,13 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:11:54 by balca             #+#    #+#             */
-/*   Updated: 2026/10/30 12:23:54 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/03 12:34:47 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_char(char c)
+int	print_char(char c)
 {
 	ft_putchar_fd(c, 1);
 	return (1);

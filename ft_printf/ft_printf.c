@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:48:33 by balca             #+#    #+#             */
-/*   Updated: 2026/10/31 21:38:27 by b3               ###   ########.fr       */
+/*   Updated: 2026/11/03 14:13:16 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-
-
 int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		sum;
-	va_list args;
+	va_list	args;
 
+	if (!format)
+		return (-1);
 	sum = 0;
 	i = 0;
-
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			sum += which_char(format[i + 1], &args);
 			i++;
@@ -53,7 +52,7 @@ int	which_char(char chr, va_list *args)
 	else if (chr == 'p')
 		return (print_pointer(va_arg(*args, void *)));
 	else if (chr == 'd' || chr == 'i' )
-		return (print_int(va_arg(*args,int)));
+		return (print_int(va_arg(*args, int)));
 	else if (chr == 'u')
 		return (print_unsigned(va_arg(*args, unsigned int)));
 	else if (chr == 'x')
@@ -64,19 +63,43 @@ int	which_char(char chr, va_list *args)
 		return (print_percent());
 	return (0);
 }
-int main()
-{
-	ft_printf("c: %c\n", 'A');
-	ft_printf("s: %s\n", "Berke");
-	ft_printf("s NULL: %s\n  %s", NULL, "berke");
-	ft_printf("%%: %%\n");
-	ft_printf("%d\n", -2147483648);
-	ft_printf("%d\n", -58);
-	ft_printf("%u\n", 2);
-	ft_printf("%u\n", 4294967295);
-	ft_printf("%x\n", 10);
-	ft_printf("%x\n\n", 9);
-	ft_printf("%X\n", 10);
-	ft_printf("%X\n", 255);
+// int	main(void)
+// {
+// 	int		a;
+// 	int		*pA;
+// 	char	*null_str;
 
-}
+// 	a = 2;
+// 	pA = &a;
+// 	null_str = NULL;
+// 	printf("===== %%c =====\n");
+// 	ft_printf("c: %c\n", 'A');
+// 	printf("c: %c\n", 'A');
+
+// 	printf("\n===== %%s =====\n");
+// 	ft_printf("s: %s\n", "Berke");
+// 	printf("s: %s\n", "Berke");
+// 	ft_printf("%s\n", null_str);
+// 	printf("%s\n", null_str);
+
+// 	printf("\n===== %%%% =====\n");
+// 	ft_printf("%%: %%\n");
+// 	printf("%%: %%\n");
+
+// 	printf("\n===== %%d =====\n");
+// 	ft_printf("%d\n", (int)-2147483648);
+// 	printf("%d\n", (int)-2147483648);
+// 	ft_printf("%d\n", -58);
+// 	printf("%d\n", -58);
+
+// 	printf("\n===== %%u =====\n");
+// 	ft_printf("%u\n", 2);
+// 	printf("%u\n", 2);
+// 	ft_printf("%u\n", 4294967295u);
+// 	printf("%u\n", 4294967295u);
+
+// 	printf("\n===== %%p =====\n");
+// 	ft_printf("%p\n", pA);
+// 	printf("%p\n", pA);
+// 	return (0);
+// }

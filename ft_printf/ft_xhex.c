@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_xhex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:55:06 by balca             #+#    #+#             */
-/*   Updated: 2026/10/31 21:26:25 by b3               ###   ########.fr       */
+/*   Updated: 2026/11/03 12:36:49 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "ft_printf.h"
 
@@ -52,17 +51,16 @@ static char	*ft_itoa_hex(unsigned int n)
 	return (new_arr);
 }
 
-int print_xhex(unsigned int u)
+int	print_xhex(unsigned int u)
 {
 	char	*number;
 	int		return_value;
 
 	number = ft_itoa_hex(u);
-	if(number == NULL)
+	if (number == NULL)
 		return (-1);
 	return_value = ft_strlen(number);
 	print_string(number);
 	free(number);
-	return(return_value);
+	return (return_value);
 }
-

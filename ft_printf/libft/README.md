@@ -1,28 +1,18 @@
 *This project has been created as part of the 42 curriculum by balca.*
 
-# Libft
+# ft_printf
 
 ## Description
 
-Libft is my first project at 42 Heilbronn.
+ft_printf is one of my first projects at 42 Heilbronn, after Libft.
 
-The goal of this project is to create my own C library by reimplementing functions from the standard C library and adding some additional functions.
+The goal of this project is to recode the `printf()` function from the C standard library. My `ft_printf()` prints the same output as the original and returns the same value, which is the number of printed characters.
 
-The project helped me understand how basic C functions actually work internally. While working on it I learned more about pointers, memory, strings, malloc, linked lists and how data is handled in memory.
+It handles the conversions `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X` and `%%`.
 
-At the end, all functions are compiled into the library `libft.a`, which can be reused in later projects.
+The project helped me understand variadic functions, which can take a different number of arguments every time they are called. I also learned how numbers are converted into characters and how decimal and hexadecimal numbers are related.
 
-## Library Description
-
-The library is divided into three main parts.
-
-The first part contains reimplementations of libc functions such as `strlen`, `memcpy`, `memmove`, `atoi`, `calloc` and many others. These functions have the same behavior as the original ones, but use the `ft_` prefix.
-
-The second part contains additional functions like `ft_substr`, `ft_strjoin`, `ft_split`, `ft_itoa` and functions for writing to file descriptors.
-
-The last part contains functions for working with linked lists. This includes creating nodes, adding nodes to the front or back, counting nodes, deleting nodes and creating a new list from an existing one.
-
-This part especially helped me understand how pointers can be used to connect different parts of memory.
+At the end, everything is compiled into the library `libftprintf.a`, which can be used in later projects.
 
 ## Instructions
 
@@ -32,10 +22,10 @@ To compile the library, run:
 make
 ```
 
-This creates the file:
+This first compiles my Libft with its own Makefile and then creates the file:
 
 ```bash
-libft.a
+libftprintf.a
 ```
 
 Other available commands are:
@@ -50,7 +40,7 @@ Removes the object files.
 make fclean
 ```
 
-Removes the object files and `libft.a`.
+Removes the object files and the libraries.
 
 ```bash
 make re
@@ -58,27 +48,35 @@ make re
 
 Deletes everything and compiles the library again.
 
-The project is compiled with the flags:
+To use it, include `ft_printf.h` in your program and compile it with the library:
 
 ```bash
--Wall -Wextra -Werror
+cc main.c libftprintf.a
 ```
+
+## Algorithm and Data Structure
+
+`ft_printf` goes through the format string character by character. Normal characters are printed directly. When it finds a `%`, the next letter is given to `which_char`, which calls the right function for this conversion. If a `%` is the last character, it is printed like a normal character, so the loop never reads past the end of the string.
+
+I split it like this because the Norm allows only 25 lines per function and because every function should have only one job. Every conversion has its own file, which makes it easy to find, test and change one part without touching the others.
+
+Every helper function returns how many characters it printed. This way `ft_printf` can add everything up and return the total at the end.
+
+The `va_list` is passed to `which_char` as a pointer. So when a value is read with `va_arg`, the original list moves forward and the next `%` gets the next argument and not the same one again. For `%c` the value is read as `int`, because small types like `char` are promoted to `int` when they are passed through `...`.
+
+For numbers I used the idea of my `ft_itoa`: count the digits, allocate a string, fill it from the back with `% 10` and `/ 10`, print it and free it. For hexadecimal I use `% 16` and `/ 16`, and the digit is taken from `"0123456789abcdef"`. `%u` has its own version with `unsigned int`, and `%p` uses `unsigned long`, because a pointer has 8 bytes.
 
 ## Resources
 
 During the project I mainly used:
 
-- the Libft subject
-- C man pages
-- C documentation
+- the ft_printf subject
+- man pages
 - discussions with other students
-- my own tests
+- my own test programs, where I compared `ft_printf` with the original `printf`
 - Francinette / Paco for testing
+- Norminette
 
 ### AI Usage
 
-I used AI mainly when I did not understand a concept or when I wanted to understand why something in my code was not working.
-
-I used it for explanations about pointers, memory allocation, linked lists or some edge cases.
-
-I also used it to discuss my own code and understand mistakes, instead of only getting a finished solution.
+I used AI as a tutor to explain concepts I did not understand, like `va_list` or hexadecimal numbers, and to review my code and find mistakes. Some parts, like the Makefile, were written together with AI step by step, and I made sure I understand every line.
