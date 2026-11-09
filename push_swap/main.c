@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 11:43:36 by balca             #+#    #+#             */
-/*   Updated: 2026/11/09 14:11:16 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/09 14:13:58 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@ int	main(int argc, char **argv)
 	long	value;
 	int		*buffer;
 
+	if (argc < 2)
+		return (0);
 	buffer = malloc(sizeof(int) * (argc - 1));
 	if (!buffer)
-		return (0);
+	{
+		ft_putendl_fd("Error", 2);
+		return (1);
+	}
 	i = 1;
 	while (i < argc)
 	{
