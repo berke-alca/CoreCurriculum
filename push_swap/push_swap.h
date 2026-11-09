@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 11:43:39 by balca             #+#    #+#             */
-/*   Updated: 2026/11/09 11:57:22 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/09 12:16:52 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include "libft/ft_printf.h"
 
 #endif
