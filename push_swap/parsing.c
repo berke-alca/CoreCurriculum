@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 12:39:30 by balca             #+#    #+#             */
-/*   Updated: 2026/11/09 13:31:42 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/09 14:14:45 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,5 @@ long	ft_atoi_ps(const char *str)
 	}
 	return (res * minus);
 }
+
+int	has_duplicates(int *buffer, int size);
