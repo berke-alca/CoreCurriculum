@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 12:39:30 by balca             #+#    #+#             */
-/*   Updated: 2026/11/09 14:14:45 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/10 16:01:04 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,54 @@ long	ft_atoi_ps(const char *str)
 	return (res * minus);
 }
 
-int	has_duplicates(int *buffer, int size);
+int	has_duplicates(int *buffer, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (size > j)
+		{
+			if (buffer[i] == buffer[j])
+			{
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	*parse_args(int argc, char **argv)
+{
+	int		i;
+	long	value;
+	int		*buffer;
+
+	buffer = malloc(sizeof(int) * (argc - 1));
+	if (!buffer)
+		return (NULL);
+	i = 1;
+	while (i < argc)
+	{
+		value = ft_atoi_ps(argv[i]);
+		if (!is_number(argv[i]) || value > 2147483647 || value < -2147483648)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[i - 1] = (int)value;
+		i++;
+	}
+	if (has_duplicates(buffer, argc - 1) == 1)
+	{
+		free(buffer);
+		return (NULL);
+	}
+	return (buffer);
+}
