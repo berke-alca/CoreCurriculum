@@ -96,8 +96,11 @@ int	*parse_args(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		while (is_flag(argv[i]) == 1)
+		if (is_flag(argv[i]) == 1)
+		{
 			i++;
+			continue;
+		}
 		value = ft_atoi_ps(argv[i]);
 		if (!is_number(argv[i]) || value > 2147483647 || value < -2147483648)
 		{
