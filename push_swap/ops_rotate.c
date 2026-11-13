@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:02:18 by balca             #+#    #+#             */
-/*   Updated: 2026/11/12 13:43:42 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/13 14:17:15 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ static void	rotate_up(t_stack *st)
 
 void	op_ra(t_push_swap *ra)
 {
-	push_to (&ra->a);
+	rotate_up (&ra->a);
 }
 
 void	op_rb(t_push_swap *rb)
 {
-	push_to (&rb->b);
+	rotate_up (&rb->b);
 }
 
 void	op_rr(t_push_swap *rr)
 {
-	push_to (&rr->a);
-	push_to (&rr->b);
+	rotate_up (&rr->a);
+	rotate_up (&rr->b);
 }

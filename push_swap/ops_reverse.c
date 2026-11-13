@@ -6,13 +6,13 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:51:29 by balca             #+#    #+#             */
-/*   Updated: 2026/11/12 14:03:22 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/13 13:21:37 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_reverse(t_stack *st)
+void	rotate_reverse(t_stack *st)
 {
 	int	i;
 	int	tmp;
@@ -29,17 +29,17 @@ static void	rotate_reverse(t_stack *st)
 	st->val[0] = tmp;
 }
 
-void	rra(t_push_swap *rra)
+void	op_rra(t_push_swap *rra)
 {
 	rotate_reverse(&rra->a);
 }
 
-void	rrb(t_push_swap *rrb)
+void	op_rrb(t_push_swap *rrb)
 {
 	rotate_reverse(&rrb->b);
 }
 
-void	rrr(t_push_swap *rrr)
+void	op_rrr(t_push_swap *rrr)
 {
 	rotate_reverse(&rrr->a);
 	rotate_reverse(&rrr->b);

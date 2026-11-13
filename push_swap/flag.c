@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:06:46 by balca             #+#    #+#             */
-/*   Updated: 2026/11/10 16:30:22 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/13 14:14:36 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	set_flag(t_push_swap *version, char *arg)
 	if (check != 1)
 		return (0);
 	else if (ft_strncmp(arg, "--simple", 9) == 0)
-		version->level = SIMPLE;
+		version->strategy = SIMPLE;
 	else if (ft_strncmp(arg, "--medium", 9) == 0)
-		version->level = MEDIUM;
+		version->strategy = MEDIUM;
 	else if (ft_strncmp(arg, "--complex", 10) == 0)
-		version->level = COMPLEX;
+		version->strategy = COMPLEX;
 	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
-		version->level = ADAPTIVE;
+		version->strategy = ADAPTIVE;
 	else if (ft_strncmp(arg, "--bench", 8) == 0)
 		version->bench = 1;
 	else

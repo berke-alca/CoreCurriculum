@@ -6,7 +6,10 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC = main.c parsing.c flag.c do_op.c ops_rotate.c ops_reverse.c stack_utils.c
+SRC = main.c parsing.c flag.c error.c do_op.c init_stacks.c \
+      ops_swap.c ops_push.c ops_rotate.c ops_reverse.c \
+      stack_utils.c ranks.c dispatch.c sort_small.c sort_simple.c \
+	  sort_medium.c sort_complex.c
 
 OBJ = $(SRC:.c=.o)
 

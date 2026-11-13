@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aanjum <aanjum@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 12:39:30 by aanjum            #+#    #+#             */
-/*   Updated: 2026/11/12 13:57:03 by aanjum           ###   ########.fr       */
+/*   Updated: 2026/11/13 14:09:59 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,22 +114,16 @@ int	*parse_args(int argc, char **argv, int *out_count)
 	if (!buffer)
 		return (NULL);
 	i = 1;
+		i = 1;
 	j = 0;
 	while (i < argc)
 	{
-		value = ft_atoi_ps(argv[i]);
-		if (!is_number(argv[i]) || value > 2147483647 || value < -2147483648)
-		{
-			free(buffer);
-			return (NULL);
-		}
-		buffer[i - 1] = (int) value;
 		if (!is_flag(argv[i]))
 		{
 			value = ft_atoi_ps(argv[i]);
 			if (!is_number(argv[i]) || value > 2147483647
-					|| value < -2147483648)
-			return (free(buffer), NULL);
+				|| value < -2147483648)
+				return (free(buffer), NULL);
 			buffer[j++] = (int) value;
 		}
 		i++;
@@ -138,6 +132,7 @@ int	*parse_args(int argc, char **argv, int *out_count)
 		return (free(buffer), NULL);
 	return (buffer);
 }
+
 //Areej: was not skiping flgs if you run ./push_swap --simple 3 2 1 so it tries to parse --simple as a number and return error.
 // int	*parse_args(int argc, char **argv, int *out_count)
 // {

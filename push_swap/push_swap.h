@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/12 16:32:28 by balca             #+#    #+#             */
-/*   Updated: 2026/11/12 16:32:30 by balca            ###   ########.fr       */
+/*   Created: 2026/11/12 16:18:08 by aanjum            #+#    #+#             */
+/*   Updated: 2026/11/13 14:21:53 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,27 @@ void	op_rr(t_push_swap *ps);
 void	op_rra(t_push_swap *ps);
 void	op_rrb(t_push_swap *ps);
 void	op_rrr(t_push_swap *ps);
+void	rotate_reverse(t_stack *st);
 
 /* stack_utils.c - Areej */
 int		is_sorted(t_push_swap *ps);
 void	free_stacks(t_push_swap *ps);
 
+/* rank.c - Areej */
+int		make_ranks(t_stack *a);
+
+/* dispatch.c - Areej */
+void	dispatch(t_push_swap *ps);
+
+/*error message for main*/
+int		print_error(t_push_swap *version);
+
+/*stack init*/
+int		init_stacks(t_push_swap *version, int *buffer, int count);
+
+/*sort.x.c files*/
+void	sort_small(t_push_swap *version);
+void	sort_simple(t_push_swap *version);
+void	sort_medium(t_push_swap *version);
+void	sort_complex(t_push_swap *version);
 #endif
