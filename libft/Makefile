@@ -45,18 +45,7 @@ SRC =	ft_isalpha.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-		ft_printf.c \
-		ft_char.c \
-		ft_int.c \
-		ft_percent.c \
-		ft_pointer.c \
-		ft_string.c \
-		ft_unsigned.c \
-		ft_xhex.c \
-		ft_xhex_big.c
+		ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -65,7 +54,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c libft.h ft_printf.h
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
