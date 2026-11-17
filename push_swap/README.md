@@ -309,6 +309,9 @@ We used AI for understanding:
 - **Explanations**: the disorder metric, complexity counted in moves, binary radix sort,
   and Norm and memory questions, and understanding other algorithms.
 
+**Learning**: we used AI to understand concepts step by step, often by answering its
+  questions instead of getting finished solutions, so we could build each part ourselves.
+  
 - **Documentation**: help with structuring and wording this README.
 
 The design decisions, the integration of the parts, and the final checks are our own
