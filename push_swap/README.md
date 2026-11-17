@@ -49,8 +49,7 @@ The project is compiled with `cc -Wall -Wextra -Werror`. Our `libft` (including 
 
 ### Usage
 
-Each number is passed as its own argument. Flags start with `--` and may appear before
-or between the numbers.
+Numbers can be passed as separate arguments or together inside one argument, such as "3 2 1". Flags start with -- and may appear before or between the numbers.
 
 ```bash
 ./push_swap 3 2 5 1 4             # adaptive strategy (default)
@@ -64,10 +63,8 @@ The moves are printed on standard output, one per line. Some special cases:
 - No numbers (for example `./push_swap` or `./push_swap --bench`): nothing is printed.
 - Numbers already sorted: nothing is printed.
 - Invalid input (a value that is not an integer, a number outside the `int` range, a
-  duplicate, an empty argument, or an unknown flag next to numbers): `Error` is printed
+  duplicate, an empty argument, or an unknown flag: `Error` is printed
   on standard error.
-- A list inside one argument, such as `"3 2 1"`, is not accepted: each number must be a
-  separate argument.
 
 ### Benchmark mode
 
@@ -245,11 +242,11 @@ Random input has a disorder close to 0.5, so in adaptive mode it goes either to 
 sort or to radix sort.
 
 ## Project structure
-
 | File | Content |
 | --- | --- |
 | `main.c` | the program flow described above |
-| `parsing.c` | `is_number`, `ft_atoi_ps` (reads into a `long` to detect overflow), `count_numbers`, `has_duplicates`, `parse_args` |
+| `parsing.c` | `is_number`, `ft_atoi_ps` (reads into a `long` to detect overflow), `count_numbers`, `has_duplicates` |
+| `parse_args.c` | `count_words`, `count_tokens`, `free_words`, `fill`, `parse_args`: splits each argument at spaces and fills the number array |
 | `flag.c` | `is_flag`, `set_flag`, `parse_flags`: reads `--simple`, `--medium`, `--complex`, `--adaptive`, `--bench` |
 | `error.c` | `print_error`: frees the stacks and prints `Error` on standard error |
 | `init_stacks.c` | `init_stacks`: stack a uses the parsed array, stack b gets an empty array of the same size |
