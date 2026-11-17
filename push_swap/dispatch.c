@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjum <aanjum@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 21:38:21 by aanjum            #+#    #+#             */
-/*   Updated: 2026/11/13 14:08:30 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/16 15:39:42 by aanjum           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ static t_strat	choose_adaptive(int disorder_bp)
 Function: dispatch
 Prototype: void dispatch(t_push_swap *ps);
 Parameters:
-ps: program state with stacks, chosen level and measured disorder.
+ps: program state with stacks, chosen strategy and measured disorder.
 Purpose: Run the right sorting algorithm for the flag and the input.
-Algorithm: Store the level actually used (for --bench), resolving
+Algorithm: Store the strategy actually used (for --bench), resolving
 --adaptive through the disorder. If a is already sorted, do nothing.
-With 5 numbers or fewer, use the small sorts for every flag.
+With 5 numbers or fewer, adaptive uses small sort a
+forced flag always run its own algorithm.
 Otherwise call simple, medium or complex.
 Return: Nothing.
 Edge cases: Sorted input prints no moves. ps->disorder_bp must be
@@ -57,7 +58,7 @@ void	dispatch(t_push_swap *ps)
 		ps->used = choose_adaptive(ps->disorder_bp);
 	if (is_sorted(ps))
 		return ;
-	if (ps->a.size <= 5)
+	if (ps->strategy == ADAPTIVE && ps->a.size <= 5)
 		sort_small(ps);
 	else if (ps->used == SIMPLE)
 		sort_simple(ps);

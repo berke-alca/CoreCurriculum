@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjum <aanjum@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 16:18:08 by aanjum            #+#    #+#             */
-/*   Updated: 2026/11/13 14:21:53 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/16 16:16:07 by aanjum           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	rotate_reverse(t_stack *st);
 int		is_sorted(t_push_swap *ps);
 void	free_stacks(t_push_swap *ps);
 
-/* rank.c - Areej */
+/* ranks.c - Areej */
 int		make_ranks(t_stack *a);
 
 /* dispatch.c - Areej */
@@ -112,9 +112,16 @@ int		print_error(t_push_swap *version);
 /*stack init*/
 int		init_stacks(t_push_swap *version, int *buffer, int count);
 
-/*sort.x.c files*/
+/*sort files*/
 void	sort_small(t_push_swap *version);
 void	sort_simple(t_push_swap *version);
 void	sort_medium(t_push_swap *version);
 void	sort_complex(t_push_swap *version);
+
+/*disorder.c - Areej */
+int		compute_disorder(t_stack *a);
+
+/*bench.c - Areej */
+void	print_bench(t_push_swap *ps);
+
 #endif

@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b3 <b3@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 16:28:50 by balca             #+#    #+#             */
-/*   Updated: 2026/11/15 15:44:04 by b3               ###   ########.fr       */
+/*   Created: 2026/11/14 16:28:50 by balca             #+#    #+#             */
+/*   Updated: 2026/11/16 13:42:57 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	find_min_index(t_push_swap *version)
+{
+	int	i;
+	int	min_index;
+
+	min_index = 0;
+	i = 1;
+	while (i < version->a.size)
+	{
+		if (version->a.val[min_index] > version->a.val[i])
+		{
+			min_index = i;
+		}
+		i++;
+	}
+	return (min_index);
+}
 
 void	sort_simple(t_push_swap *version)
 {
@@ -35,28 +53,4 @@ void	sort_simple(t_push_swap *version)
 	}
 	while (version->b.size > 0)
 		do_op(version, PA);
-
-}
-
-int		find_min_index(t_push_swap *version)
-{
-	int	i;
-	int	min_index;
-
-	min_index = 0;
-	i = 1;
-	while (i < version->a.size)
-	{
-		if (version->a.val[min_index] > version->a.val[i])
-		{
-			min_index = i;
-		}
-		i++;
-	}
-	return (min_index);
-}
-
-void	rotate_to_top(void)
-{
-
 }

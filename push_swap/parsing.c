@@ -6,7 +6,7 @@
 /*   By: balca <balca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 12:39:30 by aanjum            #+#    #+#             */
-/*   Updated: 2026/11/13 14:09:59 by balca            ###   ########.fr       */
+/*   Updated: 2026/11/17 14:58:05 by balca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,69 +99,3 @@ int	has_duplicates(int *buffer, int size)
 	}
 	return (0);
 }
-
-int	*parse_args(int argc, char **argv, int *out_count)
-{
-	int		i;
-	int		j;
-	long	value;
-	int		*buffer;
-
-	*out_count = count_numbers(argc, argv);
-	if (*out_count == 0)
-		return (NULL);
-	buffer = malloc(sizeof(int) * (*out_count));
-	if (!buffer)
-		return (NULL);
-	i = 1;
-		i = 1;
-	j = 0;
-	while (i < argc)
-	{
-		if (!is_flag(argv[i]))
-		{
-			value = ft_atoi_ps(argv[i]);
-			if (!is_number(argv[i]) || value > 2147483647
-				|| value < -2147483648)
-				return (free(buffer), NULL);
-			buffer[j++] = (int) value;
-		}
-		i++;
-	}
-	if (has_duplicates(buffer, *out_count))
-		return (free(buffer), NULL);
-	return (buffer);
-}
-
-//Areej: was not skiping flgs if you run ./push_swap --simple 3 2 1 so it tries to parse --simple as a number and return error.
-// int	*parse_args(int argc, char **argv, int *out_count)
-// {
-// 	int		i;
-// 	int		j;
-// 	long	value;
-// 	int		*buffer;
-
-// 	*out_count = count_numbers(argc, argv);
-// 	if (*out_count == 0)
-// 		return (NULL);
-// 	buffer = malloc(sizeof(int) * (*out_count));
-// 	if (!buffer)
-// 		return (NULL);
-// 	i = 1;
-// 	j = 0;
-// 	while (i < argc)
-// 	{
-// 		if (!is_flag(argv[i]))
-// 		{
-// 			value = ft_atoi_ps(argv[i]);
-// 			if (!is_number(argv[i]) || value > 2147483647
-// 					|| value < -2147483648)
-// 			return (free(buffer), NULL);
-// 			buffer[j++] = (int) value;
-// 		}
-// 		i++;
-// 	}
-// 	if (has_duplicates(buffer, *out_count))
-// 		return (free(buffer), NULL);
-// 	return (buffer);
-// }
