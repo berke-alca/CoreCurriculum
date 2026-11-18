@@ -21,7 +21,7 @@ CoreCurriculum/
 | [libft](./libft) | My own C library: reimplemented libc functions, extra string helpers and linked lists, built as `libft.a` | ✅ Completed |
 | [get_next_line](./get_next_line) | Reads a file descriptor line by line, using a `static` buffer between calls | ✅ Completed |
 | [ft_printf](./ft_printf) | Reimplementation of `printf` with variadic arguments | ✅ Completed |
-| [push_swap](./push_swap) | Sorts a list of integers using two stacks and a limited set of operations, in as few moves as possible | 🔄 In progress |
+| [push_swap](./push_swap) | Sorts a list of integers using two stacks and a limited set of operations, in as few moves as possible | ✅ Completed |
 
 ## Before the Core Curriculum
 
