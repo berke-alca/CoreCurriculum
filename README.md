@@ -13,7 +13,8 @@ CoreCurriculum/
 ├── libft/           my own C library (libft.a)
 ├── get_next_line/   reading a file line by line
 ├── ft_printf/       my own printf
-└── push_swap/       sorting with two stacks
+├── push_swap/       sorting with two stacks
+└── python00/        first steps in Python
 ```
 
 | Project | Description | Status |
@@ -22,6 +23,7 @@ CoreCurriculum/
 | [get_next_line](./get_next_line) | Reads a file descriptor line by line, using a `static` buffer between calls | ✅ Completed |
 | [ft_printf](./ft_printf) | Reimplementation of `printf` with variadic arguments | ✅ Completed |
 | [push_swap](./push_swap) | Sorts a list of integers using two stacks and a limited set of operations, in as few moves as possible | ✅ Completed |
+| [python00](./python00) | First Python module: the basics of the language, from syntax and data types to functions | 🔄 In progress |
 
 ## Before the Core Curriculum
 
