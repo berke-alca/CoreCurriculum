@@ -114,9 +114,3 @@ Coming from C, the biggest differences were:
 - **Importing runs the file.** Any top-level code executes on `import`, which is why each file contains only a function.
 - **Recursion with helper functions.** A function that calls `input()` should not call itself, so the recursion happens in a separate helper.
 
----
-
-## 👤 Author
-
-**Berke** — student at 42 Heilbronn (`balca`)
-GitHub: [berke-alca](https://github.com/berke-alca)
