@@ -14,7 +14,8 @@ CoreCurriculum/
 ├── get_next_line/   reading a file line by line
 ├── ft_printf/       my own printf
 ├── push_swap/       sorting with two stacks
-└── python00/        first steps in Python
+├── python00/        first steps in Python
+└── python01/        object-oriented Python
 ```
 
 | Project | Description | Status |
@@ -24,6 +25,7 @@ CoreCurriculum/
 | [ft_printf](./ft_printf) | Reimplementation of `printf` with variadic arguments | ✅ Completed |
 | [push_swap](./push_swap) | Sorts a list of integers using two stacks and a limited set of operations, in as few moves as possible | ✅ Completed |
 | [python00](./python00) | First Python module: the basics of the language, from syntax and data types to functions | 🔄 In progress |
+| [python01](./python01) | Second Python module: object-oriented programming with classes, built around a small garden simulation | 🔄 In progress |
 
 ## Before the Core Curriculum
 
