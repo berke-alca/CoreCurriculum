@@ -9,7 +9,7 @@ class Plant:
         print(f"Created: {self.name}: {self.height}cm, {self.days} days old")
 
 
-print("=== Dog Factory Output ===")
+print("=== Plant Factory Output ===")
 plants = [
     Plant("Rose", 25.0, 30),
     Plant("Oak", 200.0, 365),
