@@ -6,7 +6,7 @@ class Plant:
         self.growthWeek = 0.0
 
     def show(self):
-        print(f"{self.name}: {self.height}cm, {self.days} days old\n")
+        print(f"Created: {self.name}: {self.height}cm, {self.days} days old")
 
 
 print("=== Dog Factory Output ===")
@@ -18,4 +18,4 @@ plants = [
     Plant("Fern", 15.0, 120),
 ]
 for a in plants:
-    print(f"Created: {a.show()}")
+    a.show()
