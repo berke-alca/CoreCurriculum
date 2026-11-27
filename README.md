@@ -24,7 +24,7 @@ CoreCurriculum/
 | [get_next_line](./get_next_line) | Reads a file descriptor line by line, using a `static` buffer between calls | ✅ Completed |
 | [ft_printf](./ft_printf) | Reimplementation of `printf` with variadic arguments | ✅ Completed |
 | [push_swap](./push_swap) | Sorts a list of integers using two stacks and a limited set of operations, in as few moves as possible | ✅ Completed |
-| [python00](./python00) | First Python module: the basics of the language, from syntax and data types to functions | 🔄 In progress |
+| [python00](./python00) | First Python module: the basics of the language, from syntax and data types to functions | ✅ Completed |
 | [python01](./python01) | Second Python module: object-oriented programming with classes, built around a small garden simulation | 🔄 In progress |
 
 ## Before the Core Curriculum
